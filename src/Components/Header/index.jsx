@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Login from "../Login";
+import Nav from "../Nav";
 
 const Header = () => {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -18,14 +18,14 @@ const Header = () => {
 				searchTerm: searchTerm,
 			},
 		});
-		refreshPage();
+		// refreshPage();
 	};
 
 	return (
 		<div>
-			<div className="flex justify-between">
+			<div>
 				<h1>Title Will Go Here</h1>
-                <Login />
+                <Nav />
 			</div>
 			<div>
 				<form onSubmit={handleSubmit}>
