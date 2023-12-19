@@ -17,7 +17,7 @@ const Books = () => {
 	const getBooks = async () => {
 		try {
 			const response = await fetch(
-				`https://www.googleapis.com/books/v1/volumes?q=${location.state.searchTerm}&orderBy=${sort}&startIndex=0&maxResults=40`
+				`https://www.googleapis.com/books/v1/volumes?q=${location.state.searchTerm}&orderBy=${sort}&startIndex=0&maxResults=40&key=AIzaSyAdE8yYtj0PJzx2ZsK9seCJTpRaOuF1bZo`
 			);
             // const response = await fetch(`https://openlibrary.org/search.json?q=${location.state.searchTerm}&limit=40`);
 			const data = await response.json();
