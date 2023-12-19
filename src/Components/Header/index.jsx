@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { GoogleLogin } from "@react-oauth/google";
+import Login from "../Login";
 
 const Header = () => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const history = useNavigate();
+
 
 	const refreshPage = () => {
 		history(0);
@@ -20,19 +21,11 @@ const Header = () => {
 		refreshPage();
 	};
 
-    const responseMessage = (response) => {
-        console.log(response);
-    }
-
-    const errorMessage = (error) => {
-        console.log(error);
-    }
-
 	return (
 		<div>
 			<div className="flex justify-between">
 				<h1>Title Will Go Here</h1>
-				<GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+                <Login />
 			</div>
 			<div>
 				<form onSubmit={handleSubmit}>

@@ -70,8 +70,8 @@ const Books = () => {
 		</div>
 	);
 
-	return (
-		<div>
+    return (
+        <div>
             <form> {/*onSubmit={handleSubmit}*/}
             Sort By: 
                 <select onChange={handleSort} default="relevance"> {/*onChange={handleSort}*/}
@@ -79,11 +79,11 @@ const Books = () => {
                     <option value="newest">Newest</option>
                 </select>
             </form>
-			<h1>Results for "{location.state.searchTerm}": </h1>
-			{/* {books ? console.log("loaded") : console.log("loading")} */}
-			{isLoading ? loading() : loaded()}
-		</div>
-	);
+            <h1>Results for &quot;{location.state.searchTerm}&quot;: </h1>
+            {/* {books ? console.log("loaded") : console.log("loading")} */}
+            {isLoading ? loading() : loaded()}
+        </div>
+    );
 };
 
 export default Books;
