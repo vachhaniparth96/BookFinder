@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.page-turn {
+	animation: turn 3s forwards;
+}
+
+@keyframes turn {
+	0% {
+        transform: rotateY(270deg);
+		transform-origin: bottom right;
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}

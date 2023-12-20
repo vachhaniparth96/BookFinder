@@ -3,6 +3,7 @@ import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import User from "../../Pages/User";
+import { FcGoogle } from "react-icons/fc";
 
 
 /**
@@ -54,25 +55,24 @@ const Login = () => {
 		setUser(null);
 		setProfile(null);
 	};
-	return (
-		<div>
-            
                 <profileContext.Provider value={profile}>
                     {console.log(profileContext, "Profile Context")}
                     <User />
                 </profileContext.Provider>;
+	return (
+		<div className="border-2 border-gray-500 rounded-lg">
 			{profile ? (
-				<div className="flex justify-between gap-10">
-					<Link to={`user/${profile.id}`}>
+				<div>
+					{/* <Link to={`user/${profile.id}`}>
 						<p>Profile</p>
-					</Link>
+					</Link> */}
 					{/* <h3>User Logged in</h3> */}
 					{/* <p>Name: {profile.name}</p> */}
 					{/* <p>Email Address: {profile.email}</p> */}
 					<button onClick={logout}>Log out</button>
 				</div>
 			) : (
-				<button onClick={() => login()}>Sign in with Google </button>
+				<button className="flex rounded-lg px-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" onClick={() => login()}><FcGoogle size="23px"/> Login</button>
 			)}
 		</div>
 	);

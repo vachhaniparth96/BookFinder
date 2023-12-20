@@ -21,15 +21,15 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Current NYT Best Sellers: </h1>
+            <h1 className="font-bold text-center mt-10">Current NYT Best Sellers: </h1>
             {bestSellers ? (
-                <div>
+                <div className=" md:grid grid-cols-3">
                     {bestSellers.results.books.map((book, idx) => (
                         <div key={idx}>
-                            <h2>{book.title}</h2>
-                            <h3>{book.author}</h3>
-                            <img src={book.book_image} alt={book.title} />
-                            <h3>{book.description}</h3>
+                            <h2 className="font-semibold italic text-center">{book.title}</h2>
+                            <h3 className="italic text-center">{book.author}</h3>
+                            <img className="h-48 w-auto m-auto shadow-xl shadow-black" src={book.book_image} alt={book.title} />
+                            <h3 className="text-center m-auto p-5">{book.description}</h3>
                         </div>
                     ))}
                 </div>
