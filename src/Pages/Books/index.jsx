@@ -57,10 +57,10 @@ const Books = () => {
             {/* Google Books map */}
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 m-20">
 			{books.map((book, idx) => (
-                <div className="m-auto w-1/4 text-center" key={idx}>
+                <div className="m-auto w-1/2 text-center" key={idx}>
                     <Link to={`/books/${book.id}`}>
-                    <div className="flex justify-center items-center shadow-xl shadow-black hover:scale-125" >
-                    {book.volumeInfo.imageLinks === undefined ? <img src="https://islandpress.org/sites/default/files/default_book_cover_2015.jpg" alt={book.volumeInfo.title} /> : <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} /> }
+                    <div className="flex justify-center items-center hover:scale-125">
+                    {book.volumeInfo.imageLinks === undefined ? <img className="shadow-xl shadow-black"src="https://islandpress.org/sites/default/files/default_book_cover_2015.jpg" alt={book.volumeInfo.title} /> : <img className="shadow-xl shadow-black" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} /> }
                     {/* <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} /> : <img src="https://pub111.com/wp-content/plugins/post-slider-carousel/images/no-image-available-grid.jpg" alt={book.volumeInfo.title} />} */}
 					</div>
                     <h2 className="sm:text-s font-semibold pt-7">{book.volumeInfo.title}</h2>

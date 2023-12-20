@@ -6,12 +6,6 @@ import User from "../../Pages/User";
 import { FcGoogle } from "react-icons/fc";
 
 
-/**
- * Login component that handles Google OAuth login flow.
- * Manages user and profile state, makes API call to get user profile on successful login.
- * Provides profile context to child components.
- * Handles logout by clearing state.
- */
 const Login = () => {
 	const [user, setUser] = useState(null);
 	const [profile, setProfile] = useState(null); //migrate into app and make avail through context
@@ -72,7 +66,7 @@ const Login = () => {
 					<button onClick={logout}>Log out</button>
 				</div>
 			) : (
-				<button className="flex rounded-lg px-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" onClick={() => login()}><FcGoogle size="23px"/> Login</button>
+				<button className="flex rounded-lg px-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" onClick={() => login()}><FcGoogle size="23px"/>&nbsp;Login</button>
 			)}
 		</div>
 	);

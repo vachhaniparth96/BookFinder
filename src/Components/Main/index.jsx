@@ -7,7 +7,7 @@ import User from "../../Pages/User";
 
 const Main = () => {
 	return (
-		<div className="bg-amber-100">
+		<div>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/books" element={<Books />} />

@@ -23,9 +23,9 @@ const Header = () => {
 	};
 
 	return (
-		<div>
+		<div className="bg-gradient-to-b from-blue-900 via-cyan-400 to-blue-50 p-20 box">
 			<div>
-				<h1 className="text-center text-3xl">Title Will Go Here</h1>
+				<h1 className="text-center text-3xl">Shelf Surfer</h1>
                 <Nav />
 			</div>
 			<div className="flex justify-center">
