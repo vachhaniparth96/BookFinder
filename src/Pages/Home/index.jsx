@@ -8,7 +8,7 @@ const Home = () => {
     const getBestSellers = async () => {
         try{
             const response = await fetch(
-                `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${config.NYTIMES_API_KEY}` //replace API key with process.env if refactoring code
+                `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${config.NYTIMES_API_KEY}` //Fetch call to NYTimes Bestsellers API
             );
             const data = await response.json();
             setBestSellers(data);

@@ -1,20 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Nav";
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineSurfing } from "react-icons/md";
 import '@fontsource/rampart-one';
-import { IconContext } from "react-icons";
+
 
 const Header = () => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const history = useNavigate();
 
-
+	// Refresh page function that was necessary in order for the user to be able to make searches while on the search results page
 	const refreshPage = () => {
 		history(0);
 	};
 
+	// Search function
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		history("/books", {

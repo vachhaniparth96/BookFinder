@@ -1,16 +1,14 @@
-import { useState, useEffect, useContext, createContext } from "react";
+import { useState, useEffect } from "react";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import User from "../../Pages/User";
 import { FcGoogle } from "react-icons/fc";
 
 
 const Login = () => {
 	const [user, setUser] = useState(null);
-	const [profile, setProfile] = useState(null); //migrate into app and make avail through context
-	const profileContext = createContext();
+	const [profile, setProfile] = useState(null); //migrate into app and make avail through context (Icebox feature, may not even need to worry about it if I refactor the app into a full MERN stack)
 
+    //function to allow the user to log in through google
 	const login = useGoogleLogin({
 		onSuccess: (res) => setUser(res),
 		onError: (err) => {
@@ -19,6 +17,7 @@ const Login = () => {
 	});
 
 	useEffect(() => {
+        //if user is logged in, get their profile info and set it to the profile variable
 		if (user) {
 			axios
 				.get(
@@ -31,7 +30,6 @@ const Login = () => {
 					}
 				)
 				.then((res) => {
-                    console.log(user.access_token)
 					setProfile(res.data);
 				})
 				.catch((err) => {
@@ -39,9 +37,8 @@ const Login = () => {
 				});
 		}
 	}, [user]);
-
-	console.log(profile, "Profile");
     
+    //function to allow the user to log out
 	const logout = () => {
 		googleLogout({
             clientId:
@@ -50,20 +47,11 @@ const Login = () => {
 		setUser(null);
 		setProfile(null);
 	};
-                <profileContext.Provider value={profile}>
-                    {console.log(profileContext, "Profile Context")}
-                    <User />
-                </profileContext.Provider>;
+
 	return (
 		<div className="border-2 border-gray-500 rounded-lg">
 			{profile ? (
 				<div>
-					{/* <Link to={`user/${profile.id}`}>
-						<p>Profile</p>
-					</Link> */}
-					{/* <h3>User Logged in</h3> */}
-					{/* <p>Name: {profile.name}</p> */}
-					{/* <p>Email Address: {profile.email}</p> */}
 					<button className="flex rounded-lg px-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" onClick={logout}>Log out</button>
 				</div>
 			) : (

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -24,8 +25,6 @@ const BookDetails = () => {
             getBook();
         }, []);
 
-        console.log(book);
-
         const loading = () => (
             <div>
                 <h1>Loading...</h1>
@@ -47,17 +46,13 @@ const BookDetails = () => {
                 <div className="flex justify-center items-center p-5">
                     {book.volumeInfo.imageLinks === undefined ? <img src="https://islandpress.org/sites/default/files/default_book_cover_2015.jpg" alt={book.volumeInfo.title} /> : <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} /> }
                 </div>
-                {/* <p>{book.volumeInfo.maturityRating}</p> */}
-                {/* { markup = {__html: book.volumeInfo.description};} */}
                 <h3 className="text-xl">Average rating:&nbsp;
                     {book.volumeInfo.averageRating ? `${book.volumeInfo.averageRating} stars by ${book.volumeInfo.ratingsCount} readers` : "No ratings yet"}
                 </h3>
-                <div className="m-auto mx-12 md:mx-48 lg:mx-72 xl:mx-96 text-xl text-center" dangerouslySetInnerHTML={{__html: book.volumeInfo.description}}>
-                {/* <p>{book.volumeInfo.description}</p> */}
-                </div>
-                    {/* {book.volumeInfo.categories.map((category, idx) => (
-                        <h3 key={idx}>{category}</h3>
-                    ))} */}
+
+                {/* This is where the description is rendered, while accounting for any HTML tags that may be in the description */}
+                <div className="m-auto mx-12 md:mx-48 lg:mx-72 xl:mx-96 text-xl text-center" dangerouslySetInnerHTML={{__html: book.volumeInfo.description}}></div>
+                
                 {book.volumeInfo.industryIdentifiers.map((isbn, idx) => (
                     <h3 key={idx}>{isbn.type}: {isbn.identifier}</h3>
                 ))}
