@@ -43,7 +43,7 @@ const Books = () => {
     const getMoreBooks = async () => {
         try {
 			const response = await fetch(
-				`https://www.googleapis.com/books/v1/volumes?q=${location.state.searchTerm}&orderBy=${sort}&startIndex=${startIndex}&maxResults=40&key=${config.API_KEY}`
+				`https://www.googleapis.com/books/v1/volumes?q=${location.state.searchTerm}&orderBy=${sort}&startIndex=${startIndex}&maxResults=40&key=${config.GOOGLE_API_KEY}`
 			);
             // const response = await fetch(`https://openlibrary.org/search.json?q=${location.state.searchTerm}&limit=40`);
 			data = await response.json();

@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <div>
             <div className="flex justify-around mx-10 text-center py-5">
-                <div className="hover:underline">
+                <div className="hover:underline text-white">
                 <Link to="/">Home</Link>
                 </div>
                 <Login />
