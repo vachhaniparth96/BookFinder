@@ -37,7 +37,11 @@ const BookDetails = () => {
             <div className="page-turn">
             <div className="text-center py-5"> {/* Adding all detail information that may be relevant to show. Comment/Uncomment lines as needed */}
                 <h1 className="text-2xl font-bold">{book.volumeInfo.title}</h1>
-                <h2 className="text-xl italic">{book.volumeInfo.authors}</h2>
+                <h2 className="text-xl italic">Author(s):
+						{book.volumeInfo.authors.map((author, idx) => (
+							<h3 key={idx}>{author}</h3>
+						))}
+					</h2>
                 <h2>Publisher:&nbsp;{book.volumeInfo.publisher}</h2>
                 <h2>Publish Date:&nbsp;{book.volumeInfo.publishedDate}</h2>
                 <div className="flex justify-center items-center p-5">

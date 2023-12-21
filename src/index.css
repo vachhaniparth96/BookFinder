@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 .page-turn {
 	animation: turn 3s forwards;
@@ -18,8 +20,12 @@
 
 .box {
     --mask:
-      radial-gradient(48.02px at 50% calc(100% - 67.50px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
-      radial-gradient(48.02px at 50% calc(100% + 37.50px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+    radial-gradient(48.02px at 50% calc(100% - 67.50px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(48.02px at 50% calc(100% + 37.50px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
     -webkit-mask: var(--mask);
-            mask: var(--mask);
-  }
+    mask: var(--mask);
+}
+
+body {
+    background-color: #fef3c7;
+}

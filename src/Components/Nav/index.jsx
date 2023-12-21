@@ -3,9 +3,10 @@ import Login from "../Login";
 const Nav = () => {
     return (
         <div>
-            <div className="flex justify-between mx-10 text-center">
+            <div className="flex justify-around mx-10 text-center py-5">
+                <div className="hover:underline">
                 <Link to="/">Home</Link>
-                <Link to="/user/:id">Account</Link>
+                </div>
                 <Login />
             </div>
         </div>

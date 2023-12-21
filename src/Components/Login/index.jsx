@@ -31,6 +31,7 @@ const Login = () => {
 					}
 				)
 				.then((res) => {
+                    console.log(user.access_token)
 					setProfile(res.data);
 				})
 				.catch((err) => {
@@ -63,7 +64,7 @@ const Login = () => {
 					{/* <h3>User Logged in</h3> */}
 					{/* <p>Name: {profile.name}</p> */}
 					{/* <p>Email Address: {profile.email}</p> */}
-					<button onClick={logout}>Log out</button>
+					<button className="flex rounded-lg px-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" onClick={logout}>Log out</button>
 				</div>
 			) : (
 				<button className="flex rounded-lg px-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" onClick={() => login()}><FcGoogle size="23px"/>&nbsp;Login</button>

@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/rampart-one": "^5.0.17",
     "@react-oauth/google": "^0.12.1",
     "axios": "^1.6.2",
     "framer-motion": "^10.16.16",
+    "gapi-script": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
