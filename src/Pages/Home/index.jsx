@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import config from "../../config";
 
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
     const getBestSellers = async () => {
         try{
             const response = await fetch(
-                `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=2F3wpNtKBnaGUi39xzBudafBByjUYYnR` //replace API key with process.env if refactoring code
+                `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${config.NYTIMES_API_KEY}` //replace API key with process.env if refactoring code
             );
             const data = await response.json();
             setBestSellers(data);
