@@ -86,7 +86,7 @@ const Books = () => {
             </div>
             <div className="flex justify-center items-center pb-10">
                 <button 
-                className="border-2 border-gray-400 rounded-md p-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" 
+                className="border-2 border-gray-400 rounded-full p-2 bg-white hover:bg-gradient-to-r from-blue-600 via-indigo-700 to-indigo-900 hover:text-white" 
                 onClick={()=> handlePageClick()}>See More Results</button>
             </div>
 		</div>
